@@ -1,5 +1,7 @@
 # sader_files_verifier
 
+https://rathena.org/board/files/file/3968-verifiy-client-files-and-fix-it/
+
 ## JUST A TEMPLATE!!
 
 an application that check the files you want to check and download if they are missing or corrupt
