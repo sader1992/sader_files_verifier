@@ -16,11 +16,11 @@ it's just a template for now , so please edit it before you use it
 
 you better not add the data.grf and rdata.grf as files as the player better just redownload the full client again
 
-do not add your costum.grf as you will edit it every update , unless you are planing to genarate new infromation file every update
+do not add your custom.grf as you will edit it every update , unless you are planing to generate new information file every update
 
-same thing for your .dat from thor patcher don't add it
+same thing for your .dat from Thor Patcher don't add it
 
-if you have costum.grf that you will never change with the updates , you can add it i would recommend that
+if you have custom.grf that you will never change with the updates , you can add it i would recommend that
 
 
 ## DO NOT ADD THE PROGRAM IT SELF TO THE information FILE!!!
@@ -34,8 +34,8 @@ Encrypt information.txt
 
 Compress uploaded files and decompress after download
 
-add more desgin to the app
+add more design to the app
 
-desgining in visual studio is very easy!
+designing in visual studio is very easy!
 
 after building you should encrypt your exe , but you can use it as it is (i don't suggest that).
