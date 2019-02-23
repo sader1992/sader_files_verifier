@@ -10,10 +10,13 @@ it's just a template for now , so please edit it before you use it
 
 this to do list i may or may not do it , however you are free to do it your self!
 
-##TODO:
+## TODO:
 
 Encrypt information.txt
 
 Compress uploaded files and decompress after download
 
 add more desgin to the app
+
+
+after building you should encrypt your exe , but you can use it as it is (i don't suggest that).
