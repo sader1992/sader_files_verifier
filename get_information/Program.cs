@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 
 namespace get_information
 {
     class Program
     {
-        static void Main(string[] args)
+        private static string path = Directory.GetCurrentDirectory() + @"/";
+        static void Main()
         {
+            string FileListName = "Information.txt";    //file name
             Console.WriteLine("------------------------------------------------------");
             Console.WriteLine("         File Checker [By sader1992]         ");
             Console.WriteLine("------------------------------------------------------\n");
@@ -34,42 +34,70 @@ namespace get_information
             }
             string fileResult = "";
             Console.WriteLine("Processing . . .");
-            string path = Directory.GetCurrentDirectory() + @"/";
-            var fileNames = Directory.GetFiles(path).Select(Path.GetFileName);
+            List<string> fileNames = DirSearch(path);
+
             foreach (string fileName in fileNames)
             {
-                if(fileName != myName && fileName != "Information.txt")
+                if (fileName != myName && fileName != FileListName)
                 {
-                    string[] _conf = fileName.Split('/');
-                    fileResult += fileName + ":";
-                    string hach = _SHA256(path + fileName);
-                    fileResult += hach + "\n";
+                    string hach = SHA256(path + fileName);
+                    //string[] _conf = fileName.Split('/');
+                    string line = fileName + ":" + hach;
+                    fileResult += line + "\n";
+                    Console.WriteLine(line);
                 }
             }
-            if (File.Exists(path + "Information.txt"))
-                File.Delete(path + "Information.txt");
+            if (File.Exists(path + FileListName))
+            {
+                File.Delete(path + FileListName);
+            }
 
-            var file = File.Create(path + "Information.txt");
+            var file = File.Create(path + FileListName);
             file.Close();
 
-            File.WriteAllText(path + "Information.txt", fileResult);
+            File.WriteAllText(path + FileListName, fileResult);
 
             Console.WriteLine("Process Done . . .");
             Console.WriteLine("------------------------------------------------");
-            Console.WriteLine("Information.txt now next to the program");
+            Console.WriteLine(FileListName + " now next to the program");
             Console.WriteLine("you can rename it but don't edit it if you don't know what you are doing!!!");
             Console.WriteLine("Press any key to continue . . .");
             Console.ReadKey();
         }
 
         //calculate the files haches
-        private static string _SHA256(string path)
+        private static string SHA256(string path)
         {
             using (SHA256 SHA256 = SHA256Managed.Create())
             {
                 using (FileStream fileStream = File.OpenRead(path))
+                {
                     return Convert.ToBase64String(SHA256.ComputeHash(fileStream));
+                }
             }
+        }
+
+        private static List<string> DirSearch(string sDir)
+        {
+            List<String> files = new List<String>();
+            try
+            {
+                foreach (string f in Directory.GetFiles(sDir))
+                {
+                    string j = f.Replace(path, "");
+                    files.Add(j);
+                }
+                foreach (string d in Directory.GetDirectories(sDir))
+                {
+                    files.AddRange(DirSearch(d));
+                }
+            }
+            catch (System.Exception excpt)
+            {
+                Console.WriteLine(excpt.Message);
+            }
+
+            return files;
         }
     }
 }
