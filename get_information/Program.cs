@@ -8,7 +8,7 @@ namespace get_information
 {
     class Program
     {
-        private static string path = Directory.GetCurrentDirectory() + @"/";
+        private static readonly string path = Directory.GetCurrentDirectory() + @"/";
         static void Main()
         {
             string FileListName = "Information.txt";    //file name
