@@ -242,7 +242,6 @@ namespace sader_file_verifier
 
         private void Main_button_Enter(object sender, EventArgs e)
         {
-            //main_button.Text = "test";
             if (main_button.Enabled != false)
             {
                 this.main_button.BackgroundImage = Properties.Resources.click;

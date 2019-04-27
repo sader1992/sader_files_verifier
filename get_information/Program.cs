@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 
 namespace get_information
@@ -41,7 +40,6 @@ namespace get_information
                 if (fileName != myName && fileName != FileListName)
                 {
                     string hach = SHA256(path + fileName);
-                    //string[] _conf = fileName.Split('/');
                     string line = fileName + ":" + hach;
                     fileResult += line + "\n";
                     Console.WriteLine(line);
