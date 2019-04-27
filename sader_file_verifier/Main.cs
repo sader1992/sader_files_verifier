@@ -64,11 +64,17 @@ namespace sader_file_verifier
             this.main_button.BackgroundImage = Properties.Resources.disabled;
             for (int i = 0; i < broken_file.Count; i += 2)
             {
-                if (File.Exists(path + broken_file[i] + broken_file[i + 1]))
+                string filePath = path + broken_file[i] + broken_file[i + 1];
+                var directory = Path.GetDirectoryName(filePath);
+                if (!Directory.Exists(directory))
                 {
-                    File.Delete(path + broken_file[i] + broken_file[i + 1]);
+                    Directory.CreateDirectory(directory);
                 }
 
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                }
                 main_label.Text = "Downloading: " + broken_file[i + 1];
                 bool ex = await GetFile(CONF.FILES_URL + broken_file[i] + broken_file[i + 1], broken_file[i], broken_file[i + 1]);
                 if (!ex)
