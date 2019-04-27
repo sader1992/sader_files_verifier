@@ -1,15 +1,16 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("sader's files verifier")]
-[assembly: AssemblyDescription("sader's files verifier")]
+[assembly: AssemblyTitle("Sader's Files Verifier")]
+[assembly: AssemblyDescription("Sader's Files Verifier")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("sader1992")]
-[assembly: AssemblyProduct("sader_file_verifier")]
-[assembly: AssemblyCopyright("sader1992 ©  2019")]
+[assembly: AssemblyProduct("Sader's Files Verifier")]
+[assembly: AssemblyCopyright("sader1992 © 2019")]
 [assembly: AssemblyTrademark("sader1992")]
 [assembly: AssemblyCulture("")]
 
@@ -33,3 +34,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("2.0.0.0")]
 [assembly: AssemblyFileVersion("2.0.0.0")]
+[assembly: NeutralResourcesLanguage("en")]
+
