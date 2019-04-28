@@ -62,11 +62,12 @@
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(140, 399);
+            this.label2.Location = new System.Drawing.Point(54, 399);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 21);
+            this.label2.Size = new System.Drawing.Size(259, 28);
             this.label2.TabIndex = 6;
-            this.label2.Text = "BETA Test";
+            this.label2.Text = "               BETA Test               ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ExitButton
             // 

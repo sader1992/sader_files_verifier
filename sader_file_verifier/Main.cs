@@ -1,4 +1,5 @@
-﻿using System;
+﻿//#define PRECOMPILED //pre-compiled support
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -17,7 +18,7 @@ namespace sader_file_verifier
         {
             InitializeComponent();
         }
-        readonly config CONF = new config();
+        readonly Config CONF = new Config();
         bool Checked = false;
         List<string> broken_file = new List<string>();
         string path = "";
@@ -36,8 +37,10 @@ namespace sader_file_verifier
             MainLabel("Ready");
             this.BackColor = Color.FromArgb(71, 50, 60);
             this.TransparencyKey = this.BackColor;
-
-
+#if PRECOMPILED
+            label3.Text = "";
+            label2.Text = CONF.SERVER_NAME;
+#endif
             main_button.BackgroundImage = Properties.Resources.load;
             main_button.Text = "Start";
         }
