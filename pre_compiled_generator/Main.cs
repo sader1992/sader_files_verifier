@@ -60,7 +60,7 @@ namespace pre_compiled_generator
         {
             if (s == "")
             {
-                MessageBox.Show("You Must full all the information!");
+                MessageBox.Show("You Must fill all the information!");
                 Environment.Exit(0);
             }
             while (s.Length != i)
