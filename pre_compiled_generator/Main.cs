@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace pre_compiled_generator
@@ -64,7 +58,10 @@ namespace pre_compiled_generator
                 Environment.Exit(0);
             }
             while (s.Length != i)
+            {
                 s += "@";
+            }
+
             return s;
         }
         private static byte[] ReplaceBytes(byte[] src, byte[] OldByte, byte[] NewByte)
@@ -79,7 +76,9 @@ namespace pre_compiled_generator
                     for (int j = 1; j < OldByte.Length && ismatch == true; j++)
                     {
                         if (src[i + j] != OldByte[j])
+                        {
                             ismatch = false;
+                        }
                     }
                     if (ismatch)
                     {
